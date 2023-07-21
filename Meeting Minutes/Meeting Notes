@@ -16,29 +16,45 @@
 
 ## Discussion Summary:
 
+Finalized project topic, discussed additional features, skillset, availability, and delegation of responsibilities. 
+
 ### [Agenda Item 1]
-- [Brief summary of the discussion and key points]
+- Decided on [Hackateer](https://devpost.com/software/hackateer)
 
 ### [Agenda Item 2]
 - Sim Sanghera is in PDT, Mumtahin Farabi is in EDT.
-- Sim is available to begin working on the project from 
+- Sim Sanghera's availability (PDT):
+  - 4pm - 11:30pm Friday
+  - 8am - 1:30pm Saturday
+  - 11pm Saturday - presentation at 9:15 am Sunday.
+- Mumtahin Farabi's availability:
+  - All weekend
 
 ### [Agenda Item 3]
-- [Brief summary of the discussion and key points]
+- Sim Sanghera
+  - ML/AI 
+  - Python
+  - R
+  - TypeScript
+  - Backend development + APIs
+- Mumtahin Farabi
+  - Project Management
+  - Web Design in Figma
+  - Frontend Development with Nextjs+TypeScript+Tailwind
 
 ## Action Items:
 
-- [Action item 1]
-  - [Assigned to: Name]
-  - [Due date: Date]
+- [Decide on backend structure]
+  - [Assigned to: Sim Sanghera]
+  - [Due date/time: Undecided]
 
-- [Action item 2]
-  - [Assigned to: Name]
-  - [Due date: Date]
+- [Create Figma Wireframe]
+  - [Assigned to: Mumtahin Farabi]
+  - [Due date/time: Undecided]
 
-- [Action item 3]
-  - [Assigned to: Name]
-  - [Due date: Date]
+- [Create Github Project]
+  - [Assigned to: Mumtahin Farabi]
+  - [Due date/time: Undecided]
 
 ## Next Meeting:
 - Date: [Next Meeting Date]

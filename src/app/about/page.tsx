@@ -38,7 +38,7 @@ export default function About() {
         <Card
           imageSrc={farabiImage}
           name="Mumtahin Farabi"
-                  role="Project Manager, Lead Designer & Front-End Developer"
+          role="Project Manager, Lead Designer & Front-End Developer"
           githubUrl="https://github.com/mfarabi619"
           linkedinUrl="https://www.linkedin.com/in/mfarabi/"
           devpostUrl="https://devpost.com/MFarabi619?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"

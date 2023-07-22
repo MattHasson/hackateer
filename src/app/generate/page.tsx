@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function Generate() {
     return (
             <main className="min-h-screen flex flex-col justify-center items-center text-center mt-[-50px]">

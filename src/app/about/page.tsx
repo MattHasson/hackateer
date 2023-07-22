@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Card from "./card";
 import afshanImage from "./afshan.svg";
-import mattImage from "./Matt.svg";
+import mattImage from "./matt.svg";
 import farabiImage from "./farabi.svg";
 
 export default function About() {

@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         midnightNavy: '#0F0B38',
+        mysticPurple: '#4537CF',
         majesticOrchid: '#1E90FF',
         aquamarineDream: '#23C6DC',
         electricCitrus: '#FFA500',

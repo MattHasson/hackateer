@@ -8,13 +8,15 @@ export default function Home() {
       <p className="text-xs font-bold md:text-lg lg:text-2xl text-majesticOrchid">
         Your hackathon project idea generator
       </p>
-      <button className="text-sm md:text-lg lg:text-2xl px-4 py-1 lg:px-6 mt-2 transition duration-500 ease-in-out border-2 rounded-md text-raspberryFizz border-raspberryFizz hover:bg-raspberryFizz hover:text-moonlitIvory">
         <Link
           href="/generate"
         >
+
+
+      <button className="text-sm md:text-lg lg:text-2xl px-4 py-1 lg:px-6 mt-2 transition duration-500 ease-in-out border-2 rounded-md text-raspberryFizz border-raspberryFizz hover:bg-raspberryFizz hover:text-moonlitIvory hover:scale-110">
         Use Now 🚀
-        </Link>
       </button>
+        </Link>
     </main>
   );
 }

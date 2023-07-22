@@ -21,8 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-midnightNavy">
       <body className={inter.className}>
-        <Navbar/>
-        {children}</body>
+        <Navbar />
+        <div className='px-4 md:px-20'>
+        {children}
+        </div>
+      
+      </body>
     </html>
   )
 }

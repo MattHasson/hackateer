@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Card from "./card";
 import afshanImage from "./afshan.svg";
 import mattImage from "./Matt.svg";
@@ -13,7 +14,9 @@ export default function About() {
         Hackateer was created by 3 passionate developers as a project submission
         for the{" "}
         <mark className="bg-transparent text-electricCitrus">
-          Hack for Hackers
+          <Link href="https://hacks-for-hackers.devpost.com/" target="_blank" rel="noopener noreferrer">
+            Hacks for Hackers
+          </Link>
         </mark>{" "}
         Hackathon.
       </h3>

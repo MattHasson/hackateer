@@ -28,39 +28,41 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#050621]/80 min-h-[75px] flex justify-between items-center px-4 md:px-20 text-moonlitIvory sticky top-0">
-      <Image src={logo} alt="Hackteer Logo Icon" />
-    
-    {/* Top Navbar */}
-          <div className="hidden md:block space-x-10 pr-4">
-              <Link
-            onClick={toggleMobileMenu}
-            href="/"
-            className="text-moonlitIvory text-2xl font-semibold w-fit bg-clip-text hover:text-transparent bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] transition-all ease-in-out duration-500 hover:scale-110"
-          >
-            Home
-          </Link>
-          <Link
-            onClick={toggleMobileMenu}
-            href="/generate"
-            className="text-moonlitIvory text-2xl font-semibold w-fit bg-clip-text hover:text-transparent bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] transition-all ease-in-out duration-500 hover:scale-110"
-          >
-            Generate
-          </Link>
-          <Link
-            onClick={toggleMobileMenu}
-            href="/about"
-            className="text-moonlitIvory text-2xl font-semibold w-fit bg-clip-text hover:text-transparent bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] transition-all ease-in-out duration-500 hover:scale-110"
-          >
-            About
-          </Link>
-          <Link
-            onClick={toggleMobileMenu}
-            href="/contact"
-            className="text-moonlitIvory text-2xl font-semibold w-fit bg-clip-text hover:text-transparent bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] transition-all ease-in-out duration-500 hover:scale-110"
-          >
-            Contact
-          </Link>
-    </div>
+      <Link href="/">
+        <Image
+          src={logo}
+          alt="Hackateer Logo Icon"
+          className=""
+        />
+      </Link>
+
+      {/* Top Navbar */}
+      <div className="hidden md:flex space-x-10 pr-4">
+        <Link
+          href="/"
+          className="text-moonlitIvory text-2xl font-semibold bg-clip-text hover:text-transparent transform transition-all hover:scale-110 bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] ease-in-out duration-500"
+        >
+          Home
+        </Link>
+        <Link
+          href="/generate"
+          className="text-moonlitIvory text-2xl font-semibold bg-clip-text hover:text-transparent transform transition-all hover:scale-110 bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] ease-in-out duration-500"
+        >
+          Generate
+        </Link>
+        <Link
+          href="/about"
+          className="text-moonlitIvory text-2xl font-semibold bg-clip-text hover:text-transparent transform transition-all hover:scale-110 bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] ease-in-out duration-500"
+        >
+          About
+        </Link>
+        <Link
+          href="/contact"
+          className="text-moonlitIvory text-2xl font-semibold bg-clip-text hover:text-transparent transform transition-all hover:scale-110 bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] ease-in-out duration-500"
+        >
+          Contact
+        </Link>
+      </div>
 
       {/*Hamburger Button */}
       <div className="flex md:hidden">

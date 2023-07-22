@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Hackateer',
   description: 'Faster, better hackathon project ideas at your fingertips.',
+  // icons: {
+  //   icon: "/src/app/favicon.ico",
+  // }
 }
 
 export default function RootLayout({

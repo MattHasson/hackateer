@@ -11,6 +11,8 @@ export default function Home() {
         <Link
           href="/generate"
         >
+
+
       <button className="text-sm md:text-lg lg:text-2xl px-4 py-1 lg:px-6 mt-2 transition duration-500 ease-in-out border-2 rounded-md text-raspberryFizz border-raspberryFizz hover:bg-raspberryFizz hover:text-moonlitIvory">
         Use Now 🚀
       </button>

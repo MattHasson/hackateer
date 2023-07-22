@@ -37,7 +37,7 @@ export default function Navbar() {
       </Link>
 
       {/* Top Navbar */}
-      <div className="hidden md:flex space-x-10 pr-4">
+      <div className="hidden pr-4 space-x-10 md:flex">
         <Link
           href="/"
           className="text-moonlitIvory text-2xl font-semibold bg-clip-text hover:text-transparent transform transition-all hover:scale-110 bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] ease-in-out duration-500"
@@ -67,7 +67,7 @@ export default function Navbar() {
       {/*Hamburger Button */}
       <div className="flex md:hidden">
         <button
-          className="transform transition ease-in-out duration-500 hover:scale-125 group"
+          className="transition duration-500 ease-in-out transform hover:scale-125 group"
           onClick={toggleMobileMenu}
         >
           <div className="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden">
@@ -118,7 +118,7 @@ export default function Navbar() {
           }`
         }
       >
-        <div className="flex flex-col mx-6 ml-6 mt-8 space-y-6 uppercase">
+        <div className="flex flex-col mx-6 mt-8 ml-6 space-y-6 uppercase">
           <Link
             onClick={toggleMobileMenu}
             href="/"

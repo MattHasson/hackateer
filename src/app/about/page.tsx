@@ -8,7 +8,7 @@ export default function About() {
   return (
     <main className="flex flex-col mt-11 mb-11 space-y-6">
       <h1 className="font-extrabold text-5xl md:text-8xl lg:text-9xl bg-clip-text text-transparent bg-gradient-to-br from-[#0148FF] to-[#00F0FF] leading-none">
-        About us
+        About us 
       </h1>
       <h3 className="font-bold text-xl md:text-2xl lg:text-3xl text-majesticOrchid ">
         Hackateer was created by 3 passionate developers as a project submission

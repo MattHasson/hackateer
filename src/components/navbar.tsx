@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../assets/logo.svg";
 import { useState, useEffect } from "react";
 
@@ -15,7 +16,7 @@ export default function Navbar() {
   useEffect(() => {
     const hideMenu = () => {
       if (window.innerWidth > 768 && isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
+          setIsMobileMenuOpen(false);
       }
     };
     window.addEventListener("resize", hideMenu);
@@ -25,8 +26,9 @@ export default function Navbar() {
     };
   });
 
-  return (
-    <nav className="bg-[#050621] min-h-[75px] flex">
+    return (
+      
+    <nav className="bg-[#050621] min-h-[56px] flex justify-between px-4 text-moonlitIvory sticky top-0">
       <Image src={logo} alt="Hackteer Logo Icon" />
 
       {/*Hamburger Button */}
@@ -70,6 +72,49 @@ export default function Navbar() {
             </div>
           </div>
         </button>
+          </div>
+          
+    {/* Mobile Navbar */}
+      <div
+        className={
+          // `transform top-0 right-0 mt-16 w-full fixed h-full bg-black/80 overflow-auto ease-in-out transition-all duration-300 z-30 ${isMobileMenuOpen ? "translate-y-0" : "translate-y-full"}`
+          `border-t border-stone-700 transform top-0 right-0 mt-[56px] w-full fixed h-full bg-inherit overflow-auto transition duration-1000 ease-in-out z-10 ${
+            isMobileMenuOpen
+              ? "translate-x-0 backdrop-blur-[8px]"
+              : "translate-x-full backdrop-blur-none"
+          }`
+        }
+      >
+        <div className="flex flex-col mx-6 ml-6 mt-4 space-y-6 uppercase">
+          <Link
+            onClick={toggleMobileMenu}
+            href="/"
+            className="text-moonlitIvory text-2xl font-semibold w-fit bg-clip-text hover:text-transparent bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] transition-all ease-in-out duration-500 hover:scale-110"
+          >
+            Home
+          </Link>
+          <Link
+            onClick={toggleMobileMenu}
+            href="/generate"
+            className="text-moonlitIvory text-2xl font-semibold w-fit bg-clip-text hover:text-transparent bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] transition-all ease-in-out duration-500 hover:scale-110"
+          >
+            Generate
+          </Link>
+          <Link
+            onClick={toggleMobileMenu}
+            href="/about"
+            className="text-moonlitIvory text-2xl font-semibold w-fit bg-clip-text hover:text-transparent bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] transition-all ease-in-out duration-500 hover:scale-110"
+          >
+            About
+                    </Link>
+                    <Link
+            onClick={toggleMobileMenu}
+            href="/contact"
+            className="text-moonlitIvory text-2xl font-semibold w-fit bg-clip-text hover:text-transparent bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] transition-all ease-in-out duration-500 hover:scale-110"
+          >
+            Contact
+          </Link>
+        </div>
       </div>
     </nav>
   );

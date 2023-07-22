@@ -33,7 +33,7 @@ export default function About() {
         <Card
           imageSrc={mattImage}
           name="Matt Hasson"
-          role="Cloud Developer & DevOps"
+          role="Cloud/DevOps Specialist"
           githubUrl="https://github.com/MattHasson"
           linkedinUrl="https://www.linkedin.com/in/matthew-hasson-92448b223/"
           devpostUrl="https://devpost.com/scrummer03?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
@@ -41,7 +41,7 @@ export default function About() {
         <Card
           imageSrc={farabiImage}
           name="Mumtahin Farabi"
-          role="Project Manager, Lead Designer & Front-End Developer"
+          role="Project Manager, Lead Designer, Front-End Developer"
           githubUrl="https://github.com/mfarabi619"
           linkedinUrl="https://www.linkedin.com/in/mfarabi/"
           devpostUrl="https://devpost.com/MFarabi619?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"

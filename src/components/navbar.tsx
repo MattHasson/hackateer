@@ -27,7 +27,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="bg-[#050621] min-h-[75px] flex justify-between px-4 text-moonlitIvory sticky top-0">
+    <nav className="bg-[#050621]/80 min-h-[75px] flex justify-between px-4 text-moonlitIvory sticky top-0">
       <Image src={logo} alt="Hackteer Logo Icon" />
 
       {/*Hamburger Button */}
@@ -79,7 +79,7 @@ export default function Navbar() {
           // `transform top-0 right-0 mt-16 w-full fixed h-full bg-black/80 overflow-auto ease-in-out transition-all duration-300 z-30 ${isMobileMenuOpen ? "translate-y-0" : "translate-y-full"}`
           `border-t border-stone-700 transform top-0 right-0 mt-[75px] w-full fixed h-full bg-inherit overflow-auto transition duration-1000 ease-in-out z-10 ${
             isMobileMenuOpen
-              ? "translate-x-0 backdrop-blur-[8px]"
+              ? "translate-x-0 backdrop-blur-[4px]"
               : "translate-x-full backdrop-blur-none"
           }`
         }

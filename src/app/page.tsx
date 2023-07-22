@@ -7,7 +7,7 @@ export default function Home() {
       <p className="font-bold text-[10px] text-majesticOrchid">
         Your hackathon project idea generator
       </p>
-      <button className="text-raspberryFizz border-2 rounded-md border-raspberryFizz py-1 px-3 mt-2">
+      <button className="text-raspberryFizz border-2 rounded-md border-raspberryFizz py-1 px-3 mt-2 transition ease-in-out duration-500 hover:bg-raspberryFizz hover:text-moonlitIvory">
         Use Now 🚀
       </button>
     </main>

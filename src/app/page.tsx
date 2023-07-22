@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col justify-center items-center text-center mt-[-50px]">
@@ -8,7 +9,11 @@ export default function Home() {
         Your hackathon project idea generator
       </p>
       <button className="text-sm md:text-lg lg:text-2xl px-4 py-1 lg:px-6 mt-2 transition duration-500 ease-in-out border-2 rounded-md text-raspberryFizz border-raspberryFizz hover:bg-raspberryFizz hover:text-moonlitIvory">
+        <Link
+          href="/generate"
+        >
         Use Now 🚀
+        </Link>
       </button>
     </main>
   );

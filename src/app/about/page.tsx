@@ -33,7 +33,7 @@ export default function About() {
         <Card
           imageSrc={mattImage}
           name="Matt Hasson"
-          role="Designer & Cloud Developer"
+          role="Cloud Developer & DevOps"
           githubUrl="https://github.com/MattHasson"
           linkedinUrl="https://www.linkedin.com/in/matthew-hasson-92448b223/"
           devpostUrl="https://devpost.com/scrummer03?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"

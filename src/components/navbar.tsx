@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../assets/logo.svg";
+import logoWithText from '../assets/logo-with-text.svg'
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -32,7 +33,12 @@ export default function Navbar() {
         <Image
           src={logo}
           alt="Hackateer Logo Icon"
-          className="transition ease-in-out duration-500 hover:scale-125 hover:rotate-[360deg] cursor-pointer"
+          className="lg:hidden transition ease-in-out duration-500 hover:scale-125 hover:rotate-[360deg] cursor-pointer"
+        />
+        <Image
+          src={logoWithText}
+          alt="Hackateer Logo with Text"
+          className="hidden lg:block transition ease-in-out duration-500 hover:scale-125 hover:rotate-[5deg] cursor-pointer"
         />
       </Link>
 

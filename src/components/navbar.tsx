@@ -32,7 +32,7 @@ export default function Navbar() {
         <Image
           src={logo}
           alt="Hackateer Logo Icon"
-          className=""
+          className="transition ease-in-out duration-500 hover:scale-125 hover:rotate-[360deg] cursor-pointer"
         />
       </Link>
 

@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+import {FaPlus} from 'react-icons/fa'
+
 export default function Generate() {
   return (
     <main className="min-h-screen flex flex-col mt-[50px] space-y-4 mr-20">
@@ -25,9 +27,11 @@ export default function Generate() {
           <input className="text-xs md:text-md lg:text-xl text-raspberryFizz bg-mysticPurple rounded-lg p-2"></input>
         </div>
       </div>
-      <div className="flex justify-center">
-
-      <button className="text-sm md:text-lg lg:text-2xl px-4 py-1 lg:px-6 mt-2 transition duration-500 ease-in-out border-2 rounded-lg text-raspberryFizz border-raspberryFizz hover:bg-raspberryFizz hover:text-moonlitIvory">
+      <div className="flex justify-center space-x-4">
+<button className="text-sm md:text-lg lg:text-2xl px-4 py-1 lg:px-6 mt-2 transition duration-500 ease-in-out border-2 rounded-lg text-electricCitrus border-electricCitrus hover:bg-electricCitrus hover:text-moonlitIvory hover:scale-110">
+        <FaPlus/>
+      </button>
+      <button className="text-sm md:text-lg lg:text-2xl px-4 py-1 lg:px-6 mt-2 transition duration-500 ease-in-out border-2 rounded-lg text-raspberryFizz border-raspberryFizz hover:bg-raspberryFizz hover:text-moonlitIvory hover:scale-110">
         Get Ideas 🥳
       </button>
       </div>

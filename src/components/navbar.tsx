@@ -28,7 +28,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="bg-[#050621]/80 min-h-[75px] flex justify-between items-center px-4 md:px-20 text-moonlitIvory sticky top-0">
+    <nav className={`bg-[#050621]/80 min-h-[75px] flex justify-between items-center px-4 md:px-20 text-moonlitIvory sticky top-0 transition ease-in-out duration-1000 ${isMobileMenuOpen ? 'backdrop-blur-[4px]' : 'backdrop-blur-none'}`}>
       <Link href="/">
         <Image
           src={logo}
@@ -43,7 +43,7 @@ export default function Navbar() {
       </Link>
 
       {/* Top Navbar */}
-      <div className="hidden pr-4 space-x-10 md:flex">
+      <div className={`hidden pr-4 space-x-10 md:flex`}>
         <Link
           href="/"
           className="text-moonlitIvory text-2xl font-semibold bg-clip-text hover:text-transparent transform transition-all hover:scale-110 bg-gradient-to-br from-[#00C2FF] to-[#4D30FF] ease-in-out duration-500"

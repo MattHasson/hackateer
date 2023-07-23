@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app",
-    "prod": "pm2 start app.js",
+    "prod": "pm2 start app.js && pm2 logs --lines 100000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

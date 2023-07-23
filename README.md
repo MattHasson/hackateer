@@ -61,9 +61,9 @@ This project was built using the following technologies:
 
 ## Team
 
-- [Afshan Ahmed Khan](https://www.linkedin.com/in/afshan-ahmed-khan/)
-- [Matthew Hasson](https://www.linkedin.com/in/matthew-hasson/)
-- [Mumtahin Farabi](https://www.linkedin.com/in/mumtahin-farabi/)
+- [Afshan Ahmed Khan](https://www.linkedin.com/in/afshan-ak/)
+- [Matthew Hasson](https://www.linkedin.com/in/matthew-hasson-92448b223/)
+- [Mumtahin Farabi](https://www.linkedin.com/in/mfarabi/)
 
 ## License
 

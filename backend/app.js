@@ -8,6 +8,6 @@ app.use(cors());
 app.use(express.json())
 app.use(hackateers)
 app.listen(process.env.PORT,()=>{
-   console.log(process.env.OPENAI_KEY)
+   // console.log(process.env.OPENAI_KEY)
    console.log("server is running on "+process.env.PORT) 
 });

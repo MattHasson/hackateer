@@ -4,6 +4,7 @@ const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config()
 
 router.post("/problem-statement",async (req,res)=>{
+    console.log("request received")
     const configuration = new Configuration({
     apiKey: process.env.OPENAI_KEY,
     });
@@ -77,30 +78,30 @@ $overview of code
 
 (and so on you will write for each individual and their overview of code to be done  on each day )`
 
-        // console.log(prompt)
-        try {
-            const response = await openai.createChatCompletion({
-                model: "gpt-3.5-turbo",
-                messages: [
-                    {"role":"system","content":system},
-                    {"role":"user","content":prompt}
-                ],
-                temperature: 1,
-                max_tokens: 1900,
-                top_p: 1,
-                frequency_penalty: 0,
-                presence_penalty: 0,
-            });
-            console.log(response.data.choices[0].message)
-        } catch (error) {
-            console.log("error occured")
-            if (error.response) {
-            console.log(error.response.status);
-            console.log(error.response.data);
-            } else {
-            console.log(error.message);
-            }
-        }
+        console.log(prompt)
+        // try {
+        //     const response = await openai.createChatCompletion({
+        //         model: "gpt-3.5-turbo",
+        //         messages: [
+        //             {"role":"system","content":system},
+        //             {"role":"user","content":prompt}
+        //         ],
+        //         temperature: 1,
+        //         max_tokens: 4096,
+        //         top_p: 1,
+        //         frequency_penalty: 0,
+        //         presence_penalty: 0,
+        //     });
+        //     console.log(response.data.choices[0].message)
+        // } catch (error) {
+        //     console.log("error occured")
+        //     if (error.response) {
+        //     console.log(error.response.status);
+        //     console.log(error.response.data);
+        //     } else {
+        //     console.log(error.message);
+        //     }
+        // }
     }
 
     res.json({

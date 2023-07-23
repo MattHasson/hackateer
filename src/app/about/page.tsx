@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 import Card from "./card";
 import afshanImage from "./afshan.svg";
@@ -6,6 +8,7 @@ import farabiImage from "./farabi.svg";
 import indiaFlag from "./india-flag.svg";
 import usaFlag from "./usa-flag.svg";
 import canadaFlag from "./canada-flag.svg";
+import {motion} from "framer-motion";
 
 export default function About() {
   return (
@@ -29,33 +32,51 @@ export default function About() {
       </h3>
 
       <div className="flex flex-col justify-center items-center space-y-14 md:flex-row md:space-y-0 lg:justify-around md:space-x-10 md:pt-[100px]">
-        <Card
-          imageSrc={afshanImage}
-          name="Afshan Ahmed Khan"
-          role="Back-End Developer"
-          githubUrl="https://github.com/redoC-A2k"
-          linkedinUrl="https://www.linkedin.com/in/afshan-ak/"
-          devpostUrl="https://devpost.com/noob-github"
-          flag={indiaFlag}
-        />
-        <Card
-          imageSrc={mattImage}
-          name="Matthew Hasson"
-          role="Cloud/DevOps Specialist"
-          githubUrl="https://github.com/MattHasson"
-          linkedinUrl="https://www.linkedin.com/in/matthew-hasson-92448b223/"
-          devpostUrl="https://devpost.com/scrummer03?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
-          flag={usaFlag}
-        />
-        <Card
-          imageSrc={farabiImage}
-          name="Mumtahin Farabi"
-          role="Project Manager, Lead Designer, Front-End Developer"
-          githubUrl="https://github.com/mfarabi619"
-          linkedinUrl="https://www.linkedin.com/in/mfarabi/"
-          devpostUrl="https://devpost.com/MFarabi619?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
-          flag={canadaFlag}
-        />
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card
+            imageSrc={afshanImage}
+            name="Afshan Ahmed Khan"
+            role="Back-End Developer"
+            githubUrl="https://github.com/redoC-A2k"
+            linkedinUrl="https://www.linkedin.com/in/afshan-ak/"
+            devpostUrl="https://devpost.com/noob-github"
+            flag={indiaFlag}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card
+            imageSrc={mattImage}
+            name="Matthew Hasson"
+            role="Cloud/DevOps Specialist"
+            githubUrl="https://github.com/MattHasson"
+            linkedinUrl="https://www.linkedin.com/in/matthew-hasson-92448b223/"
+            devpostUrl="https://devpost.com/scrummer03?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+            flag={usaFlag}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card
+            imageSrc={farabiImage}
+            name="Mumtahin Farabi"
+            role="Project Manager, Lead Designer, Front-End Developer"
+            githubUrl="https://github.com/mfarabi619"
+            linkedinUrl="https://www.linkedin.com/in/mfarabi/"
+            devpostUrl="https://devpost.com/MFarabi619?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+            flag={canadaFlag}
+          />
+        </motion.div>
       </div>
     </main>
   );

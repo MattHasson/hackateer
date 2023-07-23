@@ -8,6 +8,7 @@ export default function Generate() {
   const [formCount, setFormCount] = useState(1);
   // const [languages, setLanguages] = useState([]);
   // const [hideSelect, setHideSelect] = useState(true);
+
   const [responseRecieved, setResponseRecieved] = useState(false);
   const [retrieving, setRetrieving] = useState(false);
   const [approach1, setApproach1] = useState("");
@@ -28,8 +29,14 @@ export default function Generate() {
     }
   };
 
+  // function handleSkill(skillInput:HTMLInputElement) {
+  //   setHideSelect(!hideSelect);
+  //   console.log(skillInput)
+  // }
+
   const forms = Array.from({ length: formCount }, (_, i) => (
     <div id={`member_${i}`} key={i} className="mt-2 grid grid-cols-2">
+
       <div>
         <input
           name="hacker"
@@ -39,12 +46,14 @@ export default function Generate() {
         />
       </div>
       <div className="relative">
+
         <input
           name="skills"
           required
           className="skills text-xs md:text-md lg:text-xl text-raspberryFizz bg-mysticPurple rounded-lg p-2"
           placeholder="Python, HTML, CSS, JS..."
         ></input>
+
       </div>
     </div>
   ));

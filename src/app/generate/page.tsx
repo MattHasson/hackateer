@@ -6,8 +6,18 @@ import { useState } from "react";
 
 export default function Generate() {
   const [formCount, setFormCount] = useState(1);
-  const [languages, setLanguages] = useState([]);
-  const [hideSelect, setHideSelect] = useState(true);
+  // const [languages, setLanguages] = useState([]);
+  // const [hideSelect, setHideSelect] = useState(true);
+  const [responseRecieved,setResponseRecieved] = useState(false);
+  const [retrieving, setRetrieving] = useState(false)
+  const [approach1,setApproach1] = useState("");
+  const [approach2,setApproach2] = useState("");
+  const [approach3,setApproach3] = useState("");
+  const [reflection,setReflection] = useState("");
+  const [evaluation,setEvaluation] = useState("");
+  const [roadmap,setRoadMap] = useState("")
+  const [decision,setDecision] = useState("")
+
 
   const addForm = () => {
     setFormCount(formCount + 1);
@@ -19,10 +29,10 @@ export default function Generate() {
     }
   };
 
-  function handleSkill(skillInput:HTMLInputElement) {
-    setHideSelect(!hideSelect);
-    console.log(skillInput)
-  }
+  // function handleSkill(skillInput:HTMLInputElement) {
+  //   setHideSelect(!hideSelect);
+  //   console.log(skillInput)
+  // }
 
   const forms = Array.from({ length: formCount }, (_, i) => (
     <div id={`member_${i}`} key={i} className="mt-2 grid grid-cols-2" >
@@ -70,6 +80,7 @@ export default function Generate() {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setRetrieving(true)
     let statement = document.querySelector("#form input#statement") as HTMLInputElement ;
     console.log(statement.value);
     let duration = document.querySelector("#form #duration") as HTMLInputElement;
@@ -101,8 +112,21 @@ export default function Generate() {
     }).then(res=>res.json())
     .then(data => {
       console.log(data.approaches)
+      if(data.approaches){
+        let response = data.approaches
+        setApproach1(response.approach1)
+        setApproach2(response.approach2)
+        setApproach3(response.approach3)
+        setDecision(response.decision)
+        setEvaluation(response.evaluation)
+        setReflection(response.reflection)
+        setRoadMap(response.roadmap)
+        setResponseRecieved(true)
+      }
+      else console.log(data.error)
     })
   }
+  if(!responseRecieved)
   return (
     <form id="form" onSubmit={handleSubmit} className="min-h-screen flex flex-col mt-[50px] space-y-4 mr-20">
       <h2 className="font-extrabold text-3xl md:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-br from-[#0148FF] to-[#00F0FF] leading-none">
@@ -160,6 +184,69 @@ export default function Generate() {
           Get Ideas 🥳
         </button>
       </div>
+      <span>
+        {retrieving?<center className="text-white">"retrieving..."</center>:<></>}
+      </span>
     </form>
   );
+
+  else if(responseRecieved) return (
+    <section className="min-h-screen flex flex-col mt-[50px] space-y-4 mr-20" >
+      <div className="approaches flex">
+        <div className="approach1 w-1/3 px-2">
+          <h2 className="font-extrabold px-10 text-2xl md:text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br from-[#0148FF] to-[#00F0FF] leading-none">
+            Approach 1
+          </h2>
+          <div className="content border-2 rounded-lg mt-2 text-center border-raspberryFizz text-electricCitrus ">
+            <span className="text-base">{approach1}</span>
+          </div>
+        </div>
+        <div className="approach2 w-1/3">
+          <h2 className="font-extrabold text-2xl md:text-3xl text-center lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br from-[#0148FF] to-[#00F0FF] leading-none">
+            Approach 2
+          </h2>
+          <div className="content border-2 rounded-lg mt-2 border-raspberryFizz text-electricCitrus">
+            <span className="text-base">{approach2}</span>
+          </div>
+        </div>
+        <div className="approach1 w-1/3 px-2">
+          <h2 className="font-extrabold text-2xl md:text-3xl text-center lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br from-[#0148FF] to-[#00F0FF] leading-none">
+            Approach 3
+          </h2>
+          <div className="content border-2 rounded-lg mt-2 border-raspberryFizz text-electricCitrus ">
+            <span className="text-base">{approach3}</span>
+          </div>
+        </div>
+      </div>
+      <div className="reflection mt-2">
+          <h2 className="font-extrabold text-2xl md:text-3xl text-center lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br from-[#0148FF] to-[#00F0FF] leading-none">
+            Reflection:
+          </h2>
+          <div className="content border-2 rounded-lg mt-2 border-raspberryFizz text-electricCitrus ">
+            <span className="text-base md:text-lg">{reflection}</span>
+          </div>
+      </div>
+      <div className="evaluation mt-2">
+          <h2 className="font-extrabold text-2xl md:text-3xl text-center lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br from-[#0148FF] to-[#00F0FF] leading-none">
+            Evaluation:
+          </h2>
+          <div className="content border-2 rounded-lg mt-2 border-raspberryFizz text-electricCitrus ">
+            <span className="text-base md:text-lg">{evaluation}</span>
+          </div>
+      </div>
+      <div className="decision mt-2">
+          <hr/>
+           <span className="text-base md:text-4xl text-white">Based on above evaluation ,we suggest to go with the idea {decision}</span>
+          <hr/>
+      </div>
+      <div className="roadmap mt-2">
+          <h2 className="font-extrabold text-2xl md:text-3xl text-center lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br from-[#0148FF] to-[#00F0FF] leading-none">
+            Roadmap of suggested Project:
+          </h2>
+          <div className="content border-2 rounded-lg mt-2 border-raspberryFizz text-electricCitrus ">
+            <span className="text-base md:text-lg">{roadmap}</span>
+          </div>
+      </div>
+    </section>
+  )
 }

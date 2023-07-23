@@ -103,6 +103,7 @@ $overview of code
                     let roadmapstr = "Roadmap"
                     let approaches = response.data.choices[0].message.content;
                     // console.log(approaches)
+                    approaches = approaches.replace(/\n/g,' ');
                     console.log("response from gpt recived")
                     let temp = approaches.search(approach2str)
                     let approach1 = approaches.slice(approach1str+12,temp)
@@ -117,7 +118,8 @@ $overview of code
                     approaches = approaches.slice(temp)
                     
                     temp = approaches.search(evaluationstr)
-                    let reflecetion = approaches.slice(reflectionstr+11,temp)
+                    let reflection = approaches.slice(reflectionstr+11,temp)
+                    reflection.replace
                     approaches = approaches.slice(temp)
                     
                     temp = approaches.search(decisionstr)
@@ -134,7 +136,7 @@ $overview of code
                         approach1,
                         approach2,
                         approach3,
-                        reflecetion,
+                        reflection,
                         evaluation,
                         decision,
                         roadmap

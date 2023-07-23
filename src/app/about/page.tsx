@@ -3,21 +3,25 @@ import Card from "./card";
 import afshanImage from "./afshan.svg";
 import mattImage from "./matt.svg";
 import farabiImage from "./farabi.svg";
-import indiaFlag from "./india-flag.svg"
-import usaFlag from "./usa-flag.svg"
-import canadaFlag from "./canada-flag.svg"
+import indiaFlag from "./india-flag.svg";
+import usaFlag from "./usa-flag.svg";
+import canadaFlag from "./canada-flag.svg";
 
 export default function About() {
   return (
     <main className="flex flex-col mt-11 mb-11 space-y-6">
       <h1 className="font-extrabold text-5xl md:text-8xl lg:text-9xl bg-clip-text text-transparent bg-gradient-to-br from-[#0148FF] to-[#00F0FF] leading-none">
-        About us 
+        About us
       </h1>
       <h3 className="font-bold text-xl md:text-2xl lg:text-3xl text-majesticOrchid pb-8 md:pb-0">
         Hackateer was created by 3 passionate developers as a project submission
         for the{" "}
-        <mark className="bg-transparent text-electricCitrus">
-          <Link href="https://hacks-for-hackers.devpost.com/" target="_blank" rel="noopener noreferrer">
+        <mark className="bg-transparent text-electricCitrus underline underline-offset-[5px]">
+          <Link
+            href="https://hacks-for-hackers.devpost.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Hacks for Hackers
           </Link>
         </mark>{" "}

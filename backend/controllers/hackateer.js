@@ -4,6 +4,7 @@ const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config()
 
 router.post("/problem-statement",async (req,res)=>{
+    console.log("request received")
     const configuration = new Configuration({
     apiKey: process.env.OPENAI_KEY,
     });
@@ -21,14 +22,15 @@ router.post("/problem-statement",async (req,res)=>{
         let persons = "";
         for (let i = 0; i < team_size; i++) {
             const member = team_members[i];
-            let str = `( name : ${member.name}, skilled in : `
-            for(let j=0; j<member.skills.length; j++){
-                let skill = member.skills[j];
-                if(j!=member.skills.length-1)
-                str+=` ${skill},`
-                else str+=`${skill}`
-            };
-            str+=`)`;
+            let str = `( name : ${member.name}, skilled in: ${member.skills})`
+            // let str = `( name : ${member.name}, skilled in : `
+            // for(let j=0; j<member.skills.length; j++){
+            //     let skill = member.skills[j];
+            //     if(j!=member.skills.length-1)
+            //     str+=` ${skill},`
+            //     else str+=`${skill}`
+            // };
+            // str+=`)`;
             if(i!=team_size-1)
             persons+=str+","
             else persons+=str;
@@ -75,37 +77,91 @@ $Day1:
 $individual1 name :
 $overview of code
 
-(and so on you will write for each individual and their overview of code to be done  on each day )`
+(and so on you will write for each individual and their overview of code to be done on each day )`
 
         // console.log(prompt)
         try {
-            const response = await openai.createChatCompletion({
+            openai.createChatCompletion({
                 model: "gpt-3.5-turbo",
                 messages: [
                     {"role":"system","content":system},
                     {"role":"user","content":prompt}
                 ],
                 temperature: 1,
-                max_tokens: 1900,
+                max_tokens: 2548,
                 top_p: 1,
                 frequency_penalty: 0,
                 presence_penalty: 0,
+            }).then(response => {
+                try {
+                    let approach1str = "Approach #1:"
+                    let approach2str = "Approach #2:"
+                    let approach3str = "Approach #3:"
+                    let reflectionstr = "Reflection:"
+                    let evaluationstr = "Evaluation:"
+                    let decisionstr = "Decision:"
+                    let roadmapstr = "Roadmap"
+                    let approaches = response.data.choices[0].message.content;
+                    // console.log(approaches)
+                    approaches = approaches.replace(/\n/g,' ');
+                    console.log("response from gpt recived")
+                    let temp = approaches.search(approach2str)
+                    let approach1 = approaches.slice(approach1str+12,temp)
+                    approaches = approaches.slice(temp)
+                    
+                    temp = approaches.search(approach3str)
+                    let approach2 = approaches.slice(approach2str+12,temp)
+                    approaches = approaches.slice(temp)
+                    
+                    temp = approaches.search(reflectionstr)
+                    let approach3 = approaches.slice(approach3str+12,temp)
+                    approaches = approaches.slice(temp)
+                    
+                    temp = approaches.search(evaluationstr)
+                    let reflection = approaches.slice(reflectionstr+11,temp)
+                    reflection.replace
+                    approaches = approaches.slice(temp)
+                    
+                    temp = approaches.search(decisionstr)
+                    let evaluation = approaches.slice(evaluationstr+11,temp)
+                    approaches = approaches.slice(temp)
+
+                    temp = approaches.search(roadmapstr)
+                    let decision = approaches.slice(decisionstr+9,temp)
+                    approaches = approaches.slice(temp)
+
+                    let roadmap = approaches
+                
+                    let responseObj = {
+                        approach1,
+                        approach2,
+                        approach3,
+                        reflection,
+                        evaluation,
+                        decision,
+                        roadmap
+                    }
+                    res.json({approaches:responseObj})
+                } catch (error) {
+                    console.log("Error while sending response to client")
+                    console.log(error)
+                }
             });
-            console.log(response.data.choices[0].message)
         } catch (error) {
             console.log("error occured")
             if (error.response) {
-            console.log(error.response.status);
-            console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.data);
+                res.json({error: error})
             } else {
-            console.log(error.message);
+                console.log(error.message);
+                res.json({error: error.message})
             }
         }
     }
-
-    res.json({
-        "message":"It has been recieved"
-    })
+    // res.json({
+    //     "message":"It has been recieved"
+    // })
 })
 
 module.exports = router;

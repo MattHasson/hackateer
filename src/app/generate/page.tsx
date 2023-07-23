@@ -236,7 +236,7 @@ export default function Generate() {
       </div>
       <div className="decision mt-2">
           <hr/>
-           <span className="text-base md:text-4xl text-white">Based on above evaluation ,we suggest to go with the idea {decision}</span>
+           <span className="text-base md:text-4xl text-white"> {decision}</span>
           <hr/>
       </div>
       <div className="roadmap mt-2">

@@ -9,18 +9,29 @@ type CardProps = {
   githubUrl: string;
   linkedinUrl: string;
   devpostUrl: string;
+  flag: StaticImageData;
 };
 
-const Card: React.FC<CardProps> = ({
+export default function Card({
   imageSrc,
   name,
   role,
   githubUrl,
   linkedinUrl,
   devpostUrl,
-}) => {
+  flag,
+}: CardProps) {
   return (
     <div className="flex flex-col items-center">
+      <div className="relative">
+        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+          <div className="w-1 h-4 bg-black translate-y-2"></div>
+          <div className="h-3 w-5 translate-y-[-15px] z-0">
+            <Image src={flag} alt="flag" />
+          </div>
+        </div>
+      </div>
+
       <Image
         src={imageSrc}
         alt={name}
@@ -46,5 +57,3 @@ const Card: React.FC<CardProps> = ({
     </div>
   );
 };
-
-export default Card;

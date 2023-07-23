@@ -28,7 +28,7 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="bg-[#050621]/80 min-h-[75px] flex justify-between items-center px-4 md:px-20 text-moonlitIvory sticky top-0">
+    <nav className="bg-[#050621]/80 min-h-[75px] flex justify-between items-center px-4 md:px-20 text-moonlitIvory sticky top-0 z-50">
       <Link href="/">
         <Image
           src={logo}

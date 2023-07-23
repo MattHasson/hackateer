@@ -32,7 +32,7 @@ export default function About() {
           githubUrl="https://github.com/redoC-A2k"
           linkedinUrl="https://www.linkedin.com/in/afshan-ak/"
           devpostUrl="https://devpost.com/noob-github"
-          flag={indiaFlag} 
+          flag={indiaFlag}
         />
         <Card
           imageSrc={mattImage}
@@ -41,7 +41,7 @@ export default function About() {
           githubUrl="https://github.com/MattHasson"
           linkedinUrl="https://www.linkedin.com/in/matthew-hasson-92448b223/"
           devpostUrl="https://devpost.com/scrummer03?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
-          flag={usFlag}
+          flag={usaFlag}
         />
         <Card
           imageSrc={farabiImage}

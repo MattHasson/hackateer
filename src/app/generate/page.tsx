@@ -100,9 +100,7 @@ export default function Generate() {
       })
     }).then(res=>res.json())
     .then(data => {
-      if(data.error)
-      console.log(data)
-      else console.log(data.message)
+      console.log(data.approaches)
     })
   }
   return (
@@ -123,6 +121,8 @@ export default function Generate() {
       <input
         name="duration"
         id="duration"
+        min={1}
+        max={7}
         required
         type="number"
         className="text-xs md:text-md lg:text-xl text-raspberryFizz bg-mysticPurple rounded-lg p-2"

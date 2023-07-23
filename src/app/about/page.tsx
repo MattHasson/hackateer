@@ -3,6 +3,9 @@ import Card from "./card";
 import afshanImage from "./afshan.svg";
 import mattImage from "./Matt.svg";
 import farabiImage from "./farabi.svg";
+import indiaFlag from "./india-flag.svg";
+import usaFlag from "./usa-flag.svg";
+import canadaFlag from "./canada-flag.svg";  
 
 export default function About() {
   return (
@@ -29,6 +32,7 @@ export default function About() {
           githubUrl="https://github.com/redoC-A2k"
           linkedinUrl="https://www.linkedin.com/in/afshan-ak/"
           devpostUrl="https://devpost.com/noob-github"
+          flag={indiaFlag}
         />
         <Card
           imageSrc={mattImage}
@@ -37,6 +41,7 @@ export default function About() {
           githubUrl="https://github.com/MattHasson"
           linkedinUrl="https://www.linkedin.com/in/matthew-hasson-92448b223/"
           devpostUrl="https://devpost.com/scrummer03?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+          flag={usaFlag}
         />
         <Card
           imageSrc={farabiImage}
@@ -45,6 +50,7 @@ export default function About() {
           githubUrl="https://github.com/mfarabi619"
           linkedinUrl="https://www.linkedin.com/in/mfarabi/"
           devpostUrl="https://devpost.com/MFarabi619?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+          flag={canadaFlag}
         />
       </div>
     </main>

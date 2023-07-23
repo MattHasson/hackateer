@@ -4,7 +4,7 @@ import afshanImage from "./afshan.svg";
 import mattImage from "./matt.svg";
 import farabiImage from "./farabi.svg";
 import indiaFlag from "./india-flag.svg"
-import usFlag from "./us-flag.svg"
+import usaFlag from "./usa-flag.svg"
 import canadaFlag from "./canada-flag.svg"
 
 export default function About() {
